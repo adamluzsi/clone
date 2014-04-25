@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    argv (2.2.0)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    rake (10.3.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  argv!
+  bundler
+  rake

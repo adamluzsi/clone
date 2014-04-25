@@ -1,0 +1,2 @@
+this will generate rest calls to all mongoid model with CRUD based helpers
+good for making ruby app for mongodb layer control to othere apis

@@ -1,0 +1,16 @@
+A programot ruby kornyezet elleneben csak siman (terminalbol)
+    "rake install"
+paranccsal telepitjuk is az alkalmazast
+
+innentol kezdve akar hol vagyunk (terminal) a
+    "gen --help" vagy "gen help" nevu parancscsal megtudhatjuk az osszes eddig implementalt mintat es dokumentaciot
+egy modul inicializalasa seged dokumentaciokat is letrehoz a tanulasahoz
+
+A "generate" nevu parancsot mindig a project konyvtaranak gyokerebol adjuk le!
+    pl.:
+
+    mkdir my_project
+    cd my_project
+    gen generate **** *** ***
+
+s a generator elvegzi a dolgot

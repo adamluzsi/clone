@@ -1,0 +1,8 @@
+XMPP:
+  JID: arthur@wonderland.lit
+  PWD: secr3t
+  HOST: 0.0.0.0
+  PORT: 5222
+  MSG:
+    $type: PPTMiddleware:MessageContainer
+    protocolVersion: 1.0

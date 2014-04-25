@@ -9,6 +9,8 @@ Gem::Specification.new do |spec|
   spec.description   = %q{ File system based sample cloner. You can build new projects with it, or merge,reuse parts from one or other. }
   spec.summary       = %q{ Tool making projects from samples and vice versa }
 
+  spec.homepage      = "https://github.com/adamluzsi/clone"
+
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})

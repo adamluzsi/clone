@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class BTM - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="index.html">Home</a>
+    <a href="table_of_contents.html#classes">Classes</a>
+    <a href="table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/btm.rb
+    <li>lib/btm/definition.rb
+    <li>lib/btm/init.rb
+    <li>lib/btm/log.rb
+    <li>lib/btm/monitor.rb
+    <li>lib/btm/participant.rb
+    <li>lib/btm/transaction.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-definition">::definition</a>
+    
+    <li ><a href="#method-c-definition_list">::definition_list</a>
+    
+    <li ><a href="#method-c-engine">::engine</a>
+    
+    <li ><a href="#method-c-kill">::kill</a>
+    
+    <li ><a href="#method-c-launch">::launch</a>
+    
+    <li ><a href="#method-c-participant">::participant</a>
+    
+    <li ><a href="#method-c-participant_list">::participant_list</a>
+    
+    <li ><a href="#method-c-pause">::pause</a>
+    
+    <li ><a href="#method-c-restart">::restart</a>
+    
+    <li ><a href="#method-c-resume">::resume</a>
+    
+    <li ><a href="#method-c-runing-3F">::runing?</a>
+    
+    <li ><a href="#method-c-ruote">::ruote</a>
+    
+    <li ><a href="#method-c-start-21">::start!</a>
+    
+    <li ><a href="#method-c-stop-21">::stop!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="INSTALL.html">INSTALL</a>
+  
+    <li class="file"><a href="commonity-btm_gemspec.html">commonity-btm.gemspec</a>
+  
+    <li class="file"><a href="doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="examples/lepton/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="examples/lepton/Gemfile_lock.html">Gemfile.lock</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="BTM.html">BTM</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class BTM</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-definition" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">definition</span><span
+            class="method-args">(name, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Munkafolyamat definialasa (pdef)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="definition-source">
+            <pre><span class="ruby-comment"># File lib/btm/definition.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">definition</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">pdef</span> = <span class="ruby-operator">::</span><span class="ruby-constant">Ruote</span>.<span class="ruby-identifier">define</span> <span class="ruby-value">:name=</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">@@definitions</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-constant">Hash</span>[<span class="ruby-identifier">name</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">pdef</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- definition-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- definition-method -->
+
+    
+      <div id="method-c-definition_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">definition_list</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Munkafolyamatok listazasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="definition_list-source">
+            <pre><span class="ruby-comment"># File lib/btm/definition.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">definition_list</span>
+  <span class="ruby-identifier">@@definitions</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- definition_list-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- definition_list-method -->
+
+    
+      <div id="method-c-engine" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">engine</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Engine visszaadasa (hasznalhato minden metodusa)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="engine-source">
+            <pre><span class="ruby-comment"># File lib/btm/init.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">engine</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Engine not runing'</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">runing?</span>
+  <span class="ruby-identifier">@@engine</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- engine-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- engine-method -->
+
+    
+      <div id="method-c-kill" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kill</span><span
+            class="method-args">(wfid)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tranzakcio leallitasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="kill-source">
+            <pre><span class="ruby-comment"># File lib/btm/transaction.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kill</span>(<span class="ruby-identifier">wfid</span>)
+  <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">kill</span>(<span class="ruby-identifier">wfid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- kill-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- kill-method -->
+
+    
+      <div id="method-c-launch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">launch</span><span
+            class="method-args">(name, fields=Hash.new, variables=Hash.new)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tranzakcio inditasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="launch-source">
+            <pre><span class="ruby-comment"># File lib/btm/transaction.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">launch</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">fields</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>, <span class="ruby-identifier">variables</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">pdef</span> = <span class="ruby-identifier">@@definitions</span>[<span class="ruby-identifier">name</span>]
+  <span class="ruby-identifier">wfid</span> = <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">launch</span>(<span class="ruby-identifier">pdef</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">variables</span>)
+  <span class="ruby-identifier">log</span> <span class="ruby-node">&quot;Workflow ID: #{wfid}&quot;</span>
+  <span class="ruby-identifier">wfid</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- launch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- launch-method -->
+
+    
+      <div id="method-c-participant" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">participant</span><span
+            class="method-args">(name, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Participant regisztralasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="participant-source">
+            <pre><span class="ruby-comment"># File lib/btm/participant.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">participant</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">register</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- participant-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- participant-method -->
+
+    
+      <div id="method-c-participant_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">participant_list</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Participantok listazasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="participant_list-source">
+            <pre><span class="ruby-comment"># File lib/btm/participant.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">participant_list</span>
+  <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">participant_list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- participant_list-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- participant_list-method -->
+
+    
+      <div id="method-c-pause" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pause</span><span
+            class="method-args">(wfid)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tranzakcio szuneteltetese</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pause-source">
+            <pre><span class="ruby-comment"># File lib/btm/transaction.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pause</span>(<span class="ruby-identifier">wfid</span>)
+  <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">pause</span>(<span class="ruby-identifier">wfid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pause-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pause-method -->
+
+    
+      <div id="method-c-restart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">restart</span><span
+            class="method-args">(wfid)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tranzakcio ujrainditasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="restart-source">
+            <pre><span class="ruby-comment"># File lib/btm/transaction.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restart</span>(<span class="ruby-identifier">wfid</span>)
+  <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">restart</span>(<span class="ruby-identifier">wfid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- restart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- restart-method -->
+
+    
+      <div id="method-c-resume" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resume</span><span
+            class="method-args">(wfid)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Leallitott tranzakcio folytatasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="resume-source">
+            <pre><span class="ruby-comment"># File lib/btm/transaction.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resume</span>(<span class="ruby-identifier">wfid</span>)
+  <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">resume</span>(<span class="ruby-identifier">wfid</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- resume-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- resume-method -->
+
+    
+      <div id="method-c-runing-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">runing?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="BTM.html">BTM</a> allapotanak lekerdezese</p>
+          
+          
+
+          
+          <div class="method-source-code" id="runing-3F-source">
+            <pre><span class="ruby-comment"># File lib/btm/init.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">runing?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@engine</span>
+        <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- runing-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- runing-3F-method -->
+
+    
+      <div id="method-c-ruote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruote</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Ruote singleton visszaadasa (hasznalhato minden metodusa)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="ruote-source">
+            <pre><span class="ruby-comment"># File lib/btm/init.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruote</span>
+  <span class="ruby-operator">::</span><span class="ruby-constant">Ruote</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruote-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruote-method -->
+
+    
+      <div id="method-c-start-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start!</span><span
+            class="method-args">(mongo=Hash.new)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="BTM.html">BTM</a> inditasa. A mongo hash a [name, host, port]
+kulcsokra hallgat.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="start-21-source">
+            <pre><span class="ruby-comment"># File lib/btm/init.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start!</span>(<span class="ruby-identifier">mongo</span>=<span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-identifier">log</span> <span class="ruby-string">&quot;Starting BTM&quot;</span>
+
+  <span class="ruby-identifier">@@definitions</span>                = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">mongo</span>[<span class="ruby-value">:name</span>]         <span class="ruby-operator">||=</span> <span class="ruby-string">'btm'</span>
+  <span class="ruby-identifier">mongo</span>[<span class="ruby-value">:host</span>]         <span class="ruby-operator">||=</span> <span class="ruby-string">'localhost'</span>
+  <span class="ruby-identifier">mongo</span>[<span class="ruby-value">:port</span>]         <span class="ruby-operator">||=</span> <span class="ruby-value">27017</span>
+  
+  <span class="ruby-identifier">mongo</span>                                = <span class="ruby-operator">::</span><span class="ruby-constant">Mongo</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">mongo</span>[<span class="ruby-value">:host</span>]).<span class="ruby-identifier">db</span>(<span class="ruby-identifier">mongo</span>[<span class="ruby-value">:name</span>])
+  <span class="ruby-identifier">storage</span>                      = <span class="ruby-operator">::</span><span class="ruby-constant">Ruote</span><span class="ruby-operator">::</span><span class="ruby-constant">Mon</span><span class="ruby-operator">::</span><span class="ruby-constant">Storage</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">mongo</span>)
+  <span class="ruby-identifier">worker</span>                       = <span class="ruby-operator">::</span><span class="ruby-constant">Ruote</span><span class="ruby-operator">::</span><span class="ruby-constant">Worker</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">storage</span>)
+  <span class="ruby-identifier">@@engine</span>                     = <span class="ruby-operator">::</span><span class="ruby-constant">Ruote</span><span class="ruby-operator">::</span><span class="ruby-constant">Engine</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">worker</span>) 
+
+  <span class="ruby-comment">#Load monitoring</span>
+  <span class="ruby-comment">#  monitoring</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'Engine not runing'</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">runing?</span>
+  <span class="ruby-identifier">log</span> <span class="ruby-string">&quot;BTM has started&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start-21-method -->
+
+    
+      <div id="method-c-stop-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stop!</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="BTM.html">BTM</a> leallitasa</p>
+          
+          
+
+          
+          <div class="method-source-code" id="stop-21-source">
+            <pre><span class="ruby-comment"># File lib/btm/init.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stop!</span>
+  <span class="ruby-identifier">log</span> <span class="ruby-string">&quot;Stopping BTM&quot;</span>    
+  <span class="ruby-identifier">@@engine</span>.<span class="ruby-identifier">shutdown</span>
+  <span class="ruby-identifier">@@engine</span> = <span class="ruby-keyword">nil</span>  
+  <span class="ruby-identifier">log</span> <span class="ruby-string">&quot;BTM has stopped&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stop-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stop-21-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

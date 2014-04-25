@@ -1,0 +1,17 @@
+TELEPITESI UTMUTATO
+-------------------
+1) gem build comminity-btm.gemspec
+2) gem install commonity-btm-VERZIO.gem
+3) Gemfile-ba:
+	gem 'commonity-btm', :require=>'btm'
+
+
+DOKUMENTACIO
+------------
+1) rdoc
+2) doc/index.html
+
+
+PELDA
+-----
+examples/lepton.rb

@@ -1,0 +1,33 @@
+MongoDB Controller
+Adatbazis modellezo es segito eszkoz
+
+Mongoid is an ODM (Object Document Mapper)
+Framework for MongoDB, written in Ruby.
+
+Mongoid (pronounced mann-goyd) is an Object-Document-Mapper
+(ODM) for MongoDB written in Ruby. It was conceived in August,
+2009 during a whiskey-induced evening at the infamous Oasis
+in Florida, USA by Durran Jordan.
+
+The philosophy of Mongoid is to provide a familiar API to
+Ruby developers who have been using Active Record or Data Mapper,
+while leveraging the power of MongoDB's schemaless and performant
+document-based design, dynamic queries, and atomic modifier operations.
+
+Sample Syntax:
+
+class Artist
+  include Mongoid::Document
+  field :name, type: String
+  embeds_many :instruments
+end
+
+class Instrument
+  include Mongoid::Document
+  field :name, type: String
+  embedded_in :artist
+end
+
+syd = Artist.where(name: "Syd Vicious").between(age: 18..25).first
+syd.instruments.create(name: "Bass")
+syd.with(database: "bands", session: "backup").save!

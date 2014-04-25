@@ -1,0 +1,188 @@
+= ruby-scgi
+
+ruby-scgi is a Ruby library for running Ruby on Rails (and possibly other
+web applications) for high-speed deployment of your applications in production.
+It is intended as a replacement for the ancient FastCGI code base and bring
+some big advantages to Rails deployment for production operations.
+
+SCGI (Simple Common Gateway Interface) is a project to replace CGI and FastCGI
+with a simpler protocol to both implement and manage. It was written by Neil
+Schemenauer and adopted by many Python developers as a hosting option.
+
+ruby-scgi is distributed as a gem, and can be installed with:
+
+    sudo gem install scgi
+
+Feedback/Bugs/Support Requests should be handled through RubyForge at
+http://rubyforge.org/projects/scgi/.
+
+The RDoc is available at http://scgi.rubyforge.org
+Source control access is available at github
+(http://github.com/jeremyevans/ruby-scgi).
+
+== Advantages
+
+* Same performance as FastCGI and better performance than other methods.
+* Can be used to run Rails with style (sudo gem install style)
+* Gives out limited status information to help manage your application's
+  resources.
+* You can set a maximum concurrent connections limit, which causes any
+  connections over the limit to get redirected to a /busy.html file. This can
+  help keep your site alive under heavy load.
+* Simple to configure with your web server.
+* Completely free code licensed under Rails's own license.
+* No external dependencies other than Ruby
+
+== Comparison With FastCGI
+
+SCGI and FastCGI have similar goals:  To keep Ruby running between requests and
+process the requests as fast as possible.  The difference is that SCGI is much
+simpler and easier to implement so there's less chance to get it wrong.
+
+Specifically, ruby-scgi is written in pure Ruby so it doesn't leak memory,
+runs everywhere, and is easy to install (no compilers needed).
+
+One thing that SCGI doesn't support is using UNIX Domain sockets in addition to
+TCP/IP sockets.  This isn't really needed, but it is handy in a shared hosting
+situation where you don't want others connecting to your processes or if you
+have to request open ports.  Sorry, no UNIX Domain sockets in SCGI.
+
+== Comparison With WEBrick
+
+In theory WEBrick should be able to run just as fast as ruby-scgi.  They are
+both written in pure Ruby.  They both do similar processing (although WEBrick's
+are a little more complicated).  They both return about the same amount of
+data.
+
+In practice WEBrick in production mode runs much slower than ruby-scgi in
+production mode.  The (dis)advantage (depending on your point of view) is that
+you have to manage your webserver differently than you manage your application.
+
+== Comparison With CGI
+
+CGI is where every time a request comes in for rails the whole Ruby on Rails
+framework is loaded.  This is very slow, but it's easy to install.
+
+An alternative is to use the cgi2scgi program distributed with the SCGI source
+available from http://www.mems-exchange.org/software/scgi/ along with the
+Apache modules.  This program basically is a small little C program that runs
+quickly as a CGI, but passes it's requests to your ruby-scgi backend.  It's not
+all that fast, but if you're stuck with cgi-bin only access then this might be
+just the way to go.  Since SCGI runs over TCP/IP you can even host your
+ruby-scgi on a totally different machine with this.
+
+== Running and Configuration
+
+ruby-scgi is now just a library and doesn't come with a tool to run Rails. The
+previous command line tool (scgi_ctrl) has been greatly enhanced and is now
+available as a standalone gem called ruby-style.
+
+== Example configurations
+
+Note that ruby-scgi is only tested on Lighttpd.  Also, note that Lighttpd
+1.4.16 has a bug which breaks redirects using server.error-handler-404, so
+either use mod_magnet, use 1.4.18, or apply the patch in ticket 1270 on
+Lighttpd's Trac.
+
+Lighttpd:
+
+ server.modules = ( ... "mod_scgi" ... )
+ server.error-handler-404 = "/dispatch.scgi"
+
+ # For Single Process or Single-Port Clustering
+ scgi.server = ( "dispatch.scgi" => (
+    "server1" => (
+        "host" => "127.0.0.1",
+        "port" => 9999,
+        "check-local" => "disable",
+        "disable-time" => 0)
+    ))
+
+ # For Multi-Port Clustering
+ scgi.server = ( "dispatch.scgi" => (
+    "server1" => (
+        "host" => "127.0.0.1",
+        "port" => 9997,
+        "check-local" => "disable",
+        "disable-time" => 0),
+    "server2" => (
+        "host" => "127.0.0.1",
+        "port" => 9998,
+        "check-local" => "disable",
+        "disable-time" => 0),
+    "server3" => (
+        "host" => "127.0.0.1",
+        "port" => 9999,
+        "check-local" => "disable",
+        "disable-time" => 0)
+    ))
+
+Apache:
+
+ <VirtualHost your-ip:80>
+    AddDefaultCharset utf-8
+    ServerName www.yourdomain
+    DocumentRoot /your-switchtower-root/current/public
+    ErrorDocument 500 /500.html
+    ErrorDocument 404 /404.html
+    # handle all requests throug SCGI
+    SCGIMount / 127.0.0.1:9999
+    # matches locations with a dot following at least one more characters,
+    # that is, things like   *,html, *.css, *.js, which should be delivered
+    # directly from the filesystem
+    <LocationMatch \..+$>
+        # don't handle those with SCGI
+        SCGIHandler Off
+    </LocationMatch>
+    <Directory /your-switchtower-root/current/public/>
+        Options +FollowSymLinks
+        Order allow,deny
+        allow from all
+    </Directory>
+ </VirtualHost>
+
+== Changes from version 0.9.0
+
+* The library should now run on Windows, though there may be issues shutting
+  it down.
+
+== Changes from version 0.8.0
+
+* You can pass a socket to SCGI::Processor.new via settings[:socket]
+* You can have a socket created for you in new if you pass
+  settings[:host] and settings[:port]
+* You can pass an existing logger to new via settings[:log]
+* Passing a socket to listen is now optional, if you passed a socket or
+  had one created in new
+* Improved RDoc for new
+* Most SCGI::Processor methods are now private
+* SCGI::Processor is easier to subclass because it will use preexisting
+  instance variables
+
+== Changes from version 0.7.0
+
+* Command line tool is now in a seperate gem called ruby-style
+* You now must pass a socket to SCGI::Processor#listen
+* SCGI::Processor's @log and @maxconns now have defaults
+* SCGI::Processor's @host and @port are no longer used
+
+== Changes from SCGI Rails Runner by Zed Shaw
+
+* Single-port clustering is back
+* scgi_ctrl is fully configurable on the command line
+* Clustering and processing are now built into scgi_ctrl
+* DRb, Win32, and throttling are no longer supported
+* Soft reconfiguration has changed (no SIGUSR1)
+* Restarting via SIGHUP is only supported in supervise mode
+* The only commands available to scgi_ctrl are start, stop, and restart
+
+== FAQ
+
+Q: Have you been living under a rock for the last two years?  Mongrel/Nginx is
+the new hotness!
+
+A: Well, aren't you snotty.  You can certainly use Mongrel if you want.  The
+memory/performance differences are small, and it is probably better maintained.
+ruby-scgi is a simpler version of SCGI Rails Runner, and may be useful for
+certain legacy setups.  Also, it works well and it's been working for me for
+the last few years.

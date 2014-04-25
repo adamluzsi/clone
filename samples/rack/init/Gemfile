@@ -1,0 +1,10 @@
+
+### Require Rack compatible gems
+gem "rack"
+gem "thin", "~> 1.5.1"
+#gem "webrick"
+#gem "ebb"
+#gem "fcgi"
+#gem "scgi"
+#gem "mongrel"
+#gem "passenger"

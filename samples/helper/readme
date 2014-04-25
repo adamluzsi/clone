@@ -1,0 +1,12 @@
+This will generate some file that will help you manage your application
+
+get_files: egy adott mappa osszes fajljat kepes visszaadni az alabbi formatumban: fajl_nev : fajl eleresi utvonala
+
+require_directory: egy abszoluth utvonal ellenebe betolti az osszes fajlt a mappabol
+
+require_relative_directory: ezzel az adott fajlhoz viszonyitva kepes vagy egy mappa egesz tartalmat felszedni
+                                ABC sorrendben
+
+
+helper will provide require relative direcroty method that extremely usefull for loading up many files from a directory
+-this will happen shorted by filenames

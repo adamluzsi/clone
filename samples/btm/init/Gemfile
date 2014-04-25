@@ -1,0 +1,7 @@
+###BTM - Business Transaction Manager
+gem 'commonity-btm',
+    :require => 'btm',
+    :path    => "./module/gems/btm/"
+gem 'mongo'
+gem 'ruote'
+gem 'ruote-mon'

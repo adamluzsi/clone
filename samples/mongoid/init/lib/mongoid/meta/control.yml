@@ -1,0 +1,13 @@
+banned:
+  Elements:
+    - test
+
+  Models:
+    - OUR::Test
+
+  ModelElements:
+    - OUR::Test: test
+  Protocol:
+    - route_info
+    - method
+    - path

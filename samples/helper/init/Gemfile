@@ -1,0 +1,3 @@
+source :rubygems
+#Development tools for debugging the application
+#gem 'debugger'

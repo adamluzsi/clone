@@ -1,0 +1,5 @@
+This script is for count the total files number in a
+directory for development purpose
+
+use as:
+ ruby lines_count.rb full_path ext_name1 ext_name2 ext_nameN

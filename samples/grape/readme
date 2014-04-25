@@ -1,0 +1,29 @@
+REST module for making rest webserver methods!
+-Ezzel REST est aplikaciokat tudsz kesziteni webszerverrer egyutt
+-az aplikáció figyelni fogja a megadott routjain a beérkező kéréseket
+
+pl.: ha a 0.0.0.0:80 on fut a webservered akkor a
+GET /user .:format  ez az alábbin fog figyelni ott:
+0.0.0.0:80/user
+
+ezen az utvonalon ha bejön neki egy GET kérés válaszolni fog
+
+REST methods:
+    -GET     -add vissza
+    -POST    -rogzitsed
+    -PUT     -frissitsed a mar meglevot
+    -DELETE  -torold azt amirol beszelunk
+*ezek szimbolikus jelentesek, de ettől függetlenül a kód azt teszi
+amit bele írnak.
+
+
+Grape is a REST-like API micro-framework for Ruby.
+It's designed to run on Rack or complement
+existing web application frameworks such as Rails
+and Sinatra by providing a simple DSL to easily develop RESTful APIs.
+It has built-in support for common conventions,
+including multiple formats, subdomain/prefix restriction,
+content negotiation, versioning and much more.
+
+Grape APIs are Rack applications that are created by
+subclassing Grape::API.

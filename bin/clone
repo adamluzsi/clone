@@ -1,4 +1,8 @@
 #!/usr/bin/env ruby
 #encoding: UTF-8
+module Clone
+  GCMD ||= {state:true}
+end
+
 $generator_commands = true
 require 'clone'

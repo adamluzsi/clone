@@ -1,7 +1,0 @@
-
-### For offline work
-#source "file:#{File.expand_path("./repo")}"
-
-#.bundler/config-ba
-#BUNDLE_PATH: "./modules"
-#BUNDLE_DISABLE_SHARED_GEMS: '1'

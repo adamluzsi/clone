@@ -1,4 +1,0 @@
-### easy XMPP client gem based on EventMachine
-gem 'blather', '~> 0.8.5'
-### JSON
-gem 'json'

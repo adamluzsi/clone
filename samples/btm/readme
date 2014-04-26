@@ -1,5 +1,0 @@
-BTM - Business Transaction Manager
-A DSL writen to wrap Ruote funcionalities.
-Main purpose is to create and manage
-transaction steps,what is persisted in db and
-remove the need of loops if the process is long term

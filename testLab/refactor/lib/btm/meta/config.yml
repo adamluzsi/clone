@@ -1,4 +1,0 @@
-btm:
-  name: BTM_APP_btm
-  host: localhost
-  port: 27017

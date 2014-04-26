@@ -1,9 +1,0 @@
-source :rubygems
-gem 'bson_ext', :require => "mongo"
-gem  'mongoid' 
-gem 'commonity-btm', :require=>'btm'
-#ruote is an open source Ruby workflow engine
-gem 'ruote',
-  git: "https://github.com/jmettraux/ruote.git"
-gem 'ruote-mon',
-  git: "https://github.com/jmettraux/ruote-mon.git"

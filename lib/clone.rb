@@ -1,4 +1,5 @@
 module Clone;end
+
 require 'loader'
 
 ### Apply monkey patch

@@ -29,38 +29,6 @@ begin
     return files
   end
 
-  ### require by absolute path directory's files
-  def require_directory(folder)
-    get_files(folder).each do |file_name,file_path|
-      puts "file will be loaded: #{file_name} from\n\t#{file_path}" if $DEBUG
-      if file_path.split('.').last == 'rb'
-        load file_path
-      end
-    end
-  end
-
-  ### require sender relative directory's files
-  def require_relative_directory(folder)
-
-    path = (caller[0].split('.rb:').first+('.rb')).split(File::SEPARATOR)
-    path = path[0..(path.count-2)]
-    tmp_array = Array.new
-
-    get_files(File.expand_path(File.join(path,folder))).sort.each do |file_name,file_path|
-      puts "file will be loaded: #{file_name} from\n\t#{file_path}" if $DEBUG
-      if file_path.split('.').last == 'rb'
-        tmp_array.push file_path
-      end
-    end
-
-    tmp_array.uniq!
-    tmp_array.sort!
-    tmp_array.each do |path|
-      load path
-    end
-
-  end
-
   ### Offline repo activate
   begin
     $LOAD_PATH << (File.expand_path(File.join(File.dirname(__FILE__),"..","..","..","module","gems")))

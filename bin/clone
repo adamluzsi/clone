@@ -4,5 +4,4 @@ module Clone
   GCMD ||= {state:true}
 end
 
-$generator_commands = true
 require 'clone'

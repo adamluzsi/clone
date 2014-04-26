@@ -1,4 +1,4 @@
-module General
+module Clone
   class VERSION
     class << self
       attr_accessor :show

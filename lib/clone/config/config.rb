@@ -1,4 +1,4 @@
-module General
+module Clone
 
   ### Create Singleton for config params
   class SampleConfig

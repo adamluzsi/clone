@@ -2,38 +2,38 @@
 begin
   ### find and replace given targets
   def process_running?(input)
-    General.process_running?(input)
+    Clone.process_running?(input)
   end
   def require_directory(directory,*args)
-    General.load_directory(directory,{:monkey_patch => 1},*args)
+    Clone.load_directory(directory,{:monkey_patch => 1},*args)
   end
   def require_ymls(directory)
-    General.load_ymls(
+    Clone.load_ymls(
         directory,
         {:monkey_patch => 1}
     )
   end
   def get_port(port,max_port=65535 ,host="0.0.0.0")
-    General.get_port(port,max_port,host)
+    Clone.get_port(port,max_port,host)
   end
   def exlogger(error_msg,*args)
     arg=Hash[*args]
     arg[:prefix] = String.new                if arg[:prefix].nil?
-    arg[:path]   = General::App.exlogger  if arg[:path].nil?
-    General.create_on_filesystem arg[:path],
+    arg[:path]   = Clone::App.exlogger  if arg[:path].nil?
+    Clone.create_on_filesystem arg[:path],
                                     'a+'
-    General.error_logger(error_msg,arg[:prefix],arg[:path])
+    Clone.error_logger(error_msg,arg[:prefix],arg[:path])
   end
   class Exception
     def logger
-      General.create_on_filesystem General::App.exceptions,
+      Clone.create_on_filesystem Clone::App.exceptions,
                                       'a+'
-      General.error_logger(self.backtrace,self,General::App.exceptions)
+      Clone.error_logger(self.backtrace,self,Clone::App.exceptions)
     end
   end
   class File
     def self.new!(file,optionable_data=nil,optionable_file_mod="w")
-      General.create_on_filesystem file,
+      Clone.create_on_filesystem file,
                                       optionable_file_mod,
                                       optionable_data
     end
@@ -60,7 +60,7 @@ begin
 
       end
 
-      General.create_on_filesystem route_name,
+      Clone.create_on_filesystem route_name,
                                optionable_file_mod,
                                optionable_data
     end

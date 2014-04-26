@@ -1,4 +1,4 @@
-module General
+module Clone
   require 'yaml'
 
   ### YML control

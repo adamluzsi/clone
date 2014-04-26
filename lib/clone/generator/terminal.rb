@@ -1,5 +1,5 @@
 #encoding: UTF-8
-module General
+module Clone
 
   ##require File.join "rubygems"
   require File.join "commander", "import"

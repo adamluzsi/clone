@@ -1,5 +1,5 @@
 ### Helper methods
-module General
+module Clone
 
   ### ClassMethods
    begin

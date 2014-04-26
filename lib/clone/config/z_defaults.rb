@@ -1,4 +1,4 @@
-module General
+module Clone
 
   ### Set Defaults
   begin

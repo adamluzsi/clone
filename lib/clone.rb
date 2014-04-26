@@ -8,8 +8,7 @@ require_relative_directory_r File.join "clone","helpers"
 ### Directory loader
 require_relative_directory_r File.join "clone","config"
 
-if defined? Clone::GCMD
-  if Clone::GCMD[:state] == true
-    require_relative_directory_r File.join "clone","generator"
-  end
+if defined? Clone::GCMD &&  Clone::GCMD[:state] == true
+  require File.join "clone","generator","engine"
+  require File.join "clone","generator","terminal"
 end

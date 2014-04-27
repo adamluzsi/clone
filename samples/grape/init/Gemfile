@@ -1,2 +1,2 @@
-#A Ruby framework for rapid API development with great conventions.
-gem "grape"
+gem 'grape'
+gem 'grape-dsl'

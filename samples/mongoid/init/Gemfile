@@ -1,3 +1,1 @@
-### Mongoid is an ODM (Object Document Mapper)
-## Framework for MongoDB, written in Ruby.
-gem "mongoid", "~> 3.1.4"
+gem "mongoid", ">= 3.1.4"

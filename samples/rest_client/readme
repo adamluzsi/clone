@@ -1,7 +1,0 @@
-rest-client is a tool for sending and get recive
-to that sended msg through REST Protocol
-
-require 'rest_client'
-RestClient.get 'http://example.com/resource',:params => {"param_hash"=>"tags"}
-
-See more in docs

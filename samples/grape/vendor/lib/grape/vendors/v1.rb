@@ -12,15 +12,17 @@ module REST
     #format :json
 
 
-    resource :RESOURCE do
+    namespace :RESOURCE do
 
       desc ""
       params do
+
         #requires :id, type: Integer
         #optional :text, type: String, regexp: /^[a-z]+$/
         #group :media do
         #  requires :url
         #end
+
       end
       get do
 
@@ -44,8 +46,8 @@ module REST
 
       end
 
-
     end
+
   end
 end
 

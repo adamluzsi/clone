@@ -1,0 +1,5 @@
+gem 'mpatch'
+gem 'argv'
+gem 'tmp'
+gem 'configer'
+gem 'daemon-ogre'

@@ -1,1 +1,0 @@
-require_relative_directory_ File.join "rack"

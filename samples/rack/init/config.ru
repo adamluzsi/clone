@@ -1,1 +1,1 @@
-require './server.rb'
+require './lib/boot.rb'

@@ -1,7 +1,4 @@
 #!/usr/bin/env ruby
 #encoding: UTF-8
-module Clone
-  GCMD ||= {state:true}
-end
-
 require 'clone'
+Clone.terminal

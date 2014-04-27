@@ -16,9 +16,24 @@ module Clone
 
     end
 
+    def get_cmd_obj category,command
+      var= ::YAML.safe_load(File.read(File.join(OPTS.sample_path,category,command,"cmd.yml")))
+      [FalseClass,NilClass].each{ |errcls|
+        raise(ArgumentError) if var.class == errcls }
+
+
+
+
+    rescue Errno::ENOENT, Psych::SyntaxError, ArgumentError
+      return {}
+    end
+
     def build_command category,command
 
-      Dir.glob( File.join(OPTS.sample_path,category,command,"**","*") ).each do |path|
+      Dir.glob( File.join(OPTS.sample_path,category,command,"**","*") ).
+      select{|p| var=(true);OPTS.exceptions.each{|ex| var=(false) if p.include?(ex)};var}.
+      select{|p| !File.directory?(p) }.
+      each do |path|
         puts path
       end
 

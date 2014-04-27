@@ -44,6 +44,11 @@ module Clone
         @@sample_path ||= get_sample_path
       end
 
+      def exception_file_names
+        %W[ cmd.yaml cmd.yml ]
+      end
+      alias :exceptions :exception_file_names
+
     end
   end
 

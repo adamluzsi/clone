@@ -1,6 +1,3 @@
-MongoDB Controller
-Adatbazis modellezo es segito eszkoz
-
 Mongoid is an ODM (Object Document Mapper)
 Framework for MongoDB, written in Ruby.
 

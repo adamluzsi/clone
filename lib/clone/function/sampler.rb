@@ -31,7 +31,8 @@ module Clone
     def build_command category,command
 
       Dir.glob( File.join(OPTS.sample_path,category,command,"**","*") ).
-      select{|p| var=(true);OPTS.exceptions.each{|ex| var=(false) if p.include?(ex)};var}.
+      #select{|p| var=(true);OPTS.exceptions.each{|ex| var=(false) if p.include?(ex)};var}.
+      select{|p| p.include?(OPTS.exceptions) }.
       select{|p| !File.directory?(p) }.
       each do |path|
         puts path

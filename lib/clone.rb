@@ -1,7 +1,8 @@
 module Clone;end
 require 'loader'
+require 'yaml'
+
 
 ### Apply monkey patch
-require_relative_directory_r File.join "clone","helpers"
-require_relative_directory_r File.join "clone","config"
-require_relative_directory_r File.join "clone","generator"
+require_relative_directory File.join "clone","config"
+require_relative_directory File.join "clone","function"
